@@ -58,3 +58,68 @@ class MyBike {
         print("Create a new Bike!")
     }
 }
+//-------------
+class Super1 {
+    init() {print("Super:init()")}
+}
+class Sub11: Super1 { //sub繼承super 沒有定義任何init,呼叫Super1.init
+    
+}
+class Sub12: Super1 {
+    override init(){
+       print("Sub12:init()")
+    //複寫後 會reture後 還是會繼承父列別
+    }
+}
+class Sub13: Super1 {
+    init(_ :Int){}
+}
+//---------------------
+class Super2{
+    init() {print("Super2:init(Int)")}
+    init(_ :Int){print("Super2:init(Int)")}
+    init(_ :Double){print("Super2:init(Double)")}
+}
+class Sub21: Super2 {
+}
+class Sub22: Super2 {
+    override init() {
+        super.init(3) //先呼叫 都可
+        print("Sub22:init()")
+        //super.init() //後呼叫 都可
+    }
+    override init(_ : Int) {
+        super.init()
+    }
+    init(_ : String) {
+        super.init()
+    }
+}
+//---------------------
+class Super3 {
+    init(){print("Super3:init()")}
+}
+class Sub31 : Super3 {
+    override init() { //override 用爸爸
+        print("doSomething")
+    }
+    convenience init(_ : Int) { //convenience 用自己
+        print("Sub31:init(Int)")
+        self.init()
+    }
+}
+
+class TWID {
+    convenience init() {
+        self.init(false)
+    }
+    convenience init(_ gender:Bool) {
+        self.init(gender, 1)
+    }
+    convenience init(_ area:Int) {
+        self.init(true, area)
+    }
+    init(_ gender:Bool, _ area : Int) {
+        print("main logic")
+    }
+}
