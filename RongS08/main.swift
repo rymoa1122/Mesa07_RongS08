@@ -8,5 +8,20 @@
 
 import Foundation
 
-print()
+var obj1 = Rong01()
+print(obj1.x)
 
+print(Rong02.x1)
+var obj2 = Rong02()
+
+Rong03.f2()
+
+var b1 = MyBike()
+var b2 = MyBike()
+var b3 = MyBike()
+var b4 = MyBike()
+print(MyBike.counter)
+print(b1.counter)
+print(b2.counter)
+print(b3.counter)
+print(b4.counter)
