@@ -110,6 +110,7 @@ class Sub31 : Super3 {
 }
 
 class TWID {
+    var id:String?
     convenience init() {
         self.init(false)
     }
@@ -121,5 +122,40 @@ class TWID {
     }
     init(_ gender:Bool, _ area : Int) {
         print("main logic")
+        self.id = "A123456789"
+    }
+    init?(_ id:String) {
+        let a = Int(arc4random_uniform(2))
+        if a == 0 {
+            return nil
+        } else {
+        self.id = id
+        }
+    }
+}
+//-----------------
+class Super4 {
+    init(){print("Super4:init()")}
+    required init(x:Int){
+    print("Super4:init(Int)")
+    }
+}
+class Sub41 : Super4 {
+    init(x : Double) {
+        super.init()
+    }
+    required init(x:Int) {
+        super.init()
+    }
+}
+class Sub42 : Super4 {
+    
+}
+class Sub421 : Sub41 {
+    override init(x : Double) {
+        super.init(x:1.0)
+    }
+    required init(x:Int) {
+        super.init(x:1.0)
     }
 }

@@ -35,4 +35,14 @@ var obj7 = Sub21()
 var obj8 = Sub22()
 print("--------")
 var obj9 = Sub31(1)
+var obja = Sub41(x:1.0)
+var objb = Sub41(x:1)
+var objc = Sub42()
+var objd = Sub42(x:1)
 print("--------")
+var myid = TWID("A123456789")
+if myid == nil {
+    print("XX")
+} else {
+    print("OK")
+}
